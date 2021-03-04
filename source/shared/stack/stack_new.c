@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   stack_new.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 10:13:53 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 12:19:54 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/03/04 12:09:00 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/03/04 12:37:32 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
 #include "shared.h"
-#include "carbon.h"
+#include "carbon/mem.h"
 
-int		main(int argc, char **argv)
+t_stack		*stack_new(size_t size)
 {
 	t_stack	*stack;
 
-	if (argc < 2)
-		return (1);
-	stack = stack_parse(argc, argv);
+	stack = mem_calloc(sizeof(t_stack));
 	if (!stack)
-		return (print_error());
-	stack_print(stack);
-	return (0);
+		return (NULL);
+	stack->size = size;
+	stack->len = 0;
+	stack->data = mem_calloc(sizeof(int64_t) * size);
+	if (!stack->data)
+		return (NULL);
+	return (stack);
 }

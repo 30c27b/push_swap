@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   stack_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 10:28:09 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 10:45:30 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/03/04 12:07:09 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/03/04 12:12:16 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
 #include "shared.h"
-#include "carbon.h"
+#include <stdlib.h>
 
-t_stack		*ch_parser(int argc, char **argv)
+void	stack_free(t_stack *stack)
 {
-	t_stack	*stack;
-	t_llst	*node;
-	size_t	i;
-
-
-	stack = mem_calloc(sizeof(t_stack));
-	if (!stack)
-		return (NULL);
-	i = 0;
-	return (stack);
+	if (stack)
+	{
+		if (stack->data)
+			free(stack->data);
+		free(stack);
+	}
 }

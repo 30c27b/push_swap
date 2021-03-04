@@ -6,7 +6,7 @@
 #    By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/04 10:04:11 by ancoulon          #+#    #+#              #
-#    Updated: 2021/03/04 10:17:07 by ancoulon         ###   ########.fr        #
+#    Updated: 2021/03/04 11:37:18 by ancoulon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ CFLAGS		= -Wall -Wextra -Werror \
 
 CH_SRCS		= \
 				$(wildcard source/shared/*.c) \
+				$(wildcard source/shared/*/*.c) \
 				$(wildcard source/checker/*.c)
 
 PS_SRCS		= \
