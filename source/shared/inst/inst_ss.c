@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   inst_ss.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 10:13:53 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 12:57:14 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/03/04 12:58:06 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/03/04 12:59:04 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
 #include "shared.h"
-#include "carbon.h"
 
-int		main(int argc, char **argv)
+void	inst_ss(t_stack *st_a, t_stack *st_b)
 {
-	t_stack	*stack;
-
-	if (argc < 2)
-		return (1);
-	stack = stack_parse(argc, argv);
-	if (!stack)
-		return (print_error());
-	stack_print(stack);
-	stack_print(stack);
-	return (0);
+	inst_sa(st_a, st_b);
+	inst_sb(st_a, st_b);
 }

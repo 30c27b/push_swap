@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   inst_sa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 10:13:53 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 12:57:14 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/03/04 12:40:04 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/03/04 12:56:29 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
 #include "shared.h"
-#include "carbon.h"
 
-int		main(int argc, char **argv)
+void	inst_sa(t_stack *st_a, t_stack *st_b)
 {
-	t_stack	*stack;
-
-	if (argc < 2)
-		return (1);
-	stack = stack_parse(argc, argv);
-	if (!stack)
-		return (print_error());
-	stack_print(stack);
-	stack_print(stack);
-	return (0);
+	int64_t	tmp;
+	
+	(void)st_b;
+	if (st_a->len < 2)
+		return ;
+	tmp = st_a->data[st_a->len - 1];
+	st_a->data[st_a->len - 1] = st_a->data[st_a->len - 2];
+	st_a->data[st_a->len - 2] = tmp;
 }
