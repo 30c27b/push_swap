@@ -1,43 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   reader.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 10:13:53 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 16:05:03 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/03/04 15:47:38 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/03/04 16:01:07 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 #include "shared.h"
-#include "carbon.h"
-#include <stdio.h>
+#include "carbon/llst.h"
+#include "carbon/io.h"
+#include <unistd.h>
 
-int		main(int argc, char **argv)
+t_llst	*sh_reader(void)
 {
-	t_stack	*st_a;
-	t_stack	*st_b;
-	t_llst	*insts;
+	t_llst	*head;
 	t_llst	*node;
+	char	*line;
 
-	if (argc < 2)
-		return (1);
-	st_a = stack_parse(argc, argv);
-	if (!st_a)
-		return (print_error());
-	st_b = stack_new(st_a->size);
-	if (!st_b)
-		return (print_error());
-	return (0);
-	insts = sh_reader();
-	if (!insts)
-		return (print_error());
-	node = insts;
-	while (node)
+	head = NULL;
+	while (io_next_line(STDIN_FILENO, &line) > 0)
 	{
-		printf("inst: %s\n", node->data);
-		node = node->next;
+		node = llst_new(line);
+		if (!node)
+			return (NULL);
+		llst_push(&head, node);
 	}
+	node = llst_new(line);
+	if (!node)
+		return (NULL);
+	llst_push(&head, node);
+	return (head);
 }
