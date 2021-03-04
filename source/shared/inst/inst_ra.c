@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_print.c                                      :+:      :+:    :+:   */
+/*   inst_ra.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 11:11:24 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 15:19:33 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/03/04 15:20:08 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/03/04 15:21:04 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared.h"
-#include "carbon/fmt.h"
-#include <stddef.h>
-#include <stdio.h>
 
-void	stack_print(t_stack *stack)
+void	inst_ra(t_stack *st_a, t_stack *st_b)
 {
+	int64_t	tmp;
 	size_t	i;
 
-	i = stack->len;
-	printf("stack (%zu):\n", stack->len);
+	(void)st_b;
+	if (st_a->len < 2)
+		return ;
+	i = st_a->len;
+	tmp = st_a->data[st_a->len - 1];
 	while (i > 0)
 	{
-		printf("> %lld\n", stack->data[i - 1]);
+		st_a->data[i] = st_a->data[i - 1];
 		i--;
 	}
+	st_a->data[0] = tmp;
 }
