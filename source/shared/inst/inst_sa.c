@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 12:40:04 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 12:56:29 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/04 21:18:18 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	inst_sa(t_stack *st_a, t_stack *st_b)
 {
 	int64_t	tmp;
-	
+
 	(void)st_b;
 	if (st_a->len < 2)
 		return ;

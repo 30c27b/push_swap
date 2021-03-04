@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:17:00 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 15:19:59 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/04 21:18:26 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	inst_rra(t_stack *st_a, t_stack *st_b)
 		return ;
 	i = 0;
 	tmp = st_a->data[0];
-	while (i < st_a->len -1)
+	while (i < st_a->len - 1)
 	{
 		st_a->data[i] = st_a->data[i + 1];
 		i++;

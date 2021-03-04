@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:22:29 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 15:22:38 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/04 21:18:35 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	inst_rrb(t_stack *st_a, t_stack *st_b)
 		return ;
 	i = 0;
 	tmp = st_b->data[0];
-	while (i < st_b->len -1)
+	while (i < st_b->len - 1)
 	{
 		st_b->data[i] = st_b->data[i + 1];
 		i++;

@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 11:11:24 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 15:19:33 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/04 21:16:25 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	stack_print(t_stack *stack)
 	size_t	i;
 
 	i = stack->len;
-	printf("stack (%zu):\n", stack->len);
+	printf("(%zu):\n", stack->len);
 	while (i > 0)
 	{
 		printf("> %lld\n", stack->data[i - 1]);

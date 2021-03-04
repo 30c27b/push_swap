@@ -6,7 +6,7 @@
 #    By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/04 10:04:11 by ancoulon          #+#    #+#              #
-#    Updated: 2021/03/04 11:37:18 by ancoulon         ###   ########.fr        #
+#    Updated: 2021/03/04 21:22:34 by ancoulon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,15 +18,33 @@ LIBDIR		= libcarbon
 LIBNAME		= libcarbon.a
 LIBMAKE		= make -C $(LIBDIR)
 
-CC			= clang
+CC			= clang -g
 \RM			= rm -f
 CFLAGS		= -Wall -Wextra -Werror \
 				-I./include -I./$(LIBDIR)/include \
 
 CH_SRCS		= \
-				$(wildcard source/shared/*.c) \
-				$(wildcard source/shared/*/*.c) \
-				$(wildcard source/checker/*.c)
+				source/checker/inspector.c \
+				source/checker/reader.c \
+				source/checker/main.c \
+				source/checker/interpreter.c \
+				source/shared/utils/print_error.c \
+				source/shared/stack/stack_parse.c \
+				source/shared/stack/stack_print.c \
+				source/shared/stack/stack_new.c \
+				source/shared/stack/stack_free.c \
+				source/shared/inst/inst_pb.c \
+				source/shared/inst/inst_rrr.c \
+				source/shared/inst/inst_rr.c \
+				source/shared/inst/inst_pa.c \
+				source/shared/inst/inst_sa.c \
+				source/shared/inst/inst_ra.c \
+				source/shared/inst/inst_get.c \
+				source/shared/inst/inst_rra.c \
+				source/shared/inst/inst_ss.c \
+				source/shared/inst/inst_sb.c \
+				source/shared/inst/inst_rrb.c \
+				source/shared/inst/inst_rb.c
 
 PS_SRCS		= \
 				$(wildcard source/shared/*.c) \
