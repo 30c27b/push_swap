@@ -6,10 +6,9 @@
 #    By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/04 10:04:11 by ancoulon          #+#    #+#              #
-#    Updated: 2021/03/04 21:22:34 by ancoulon         ###   ########.fr        #
+#    Updated: 2021/03/04 22:07:52 by ancoulon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 CH_NAME		= checker
 PS_NAME		= push_swap
@@ -47,7 +46,7 @@ CH_SRCS		= \
 				source/shared/inst/inst_rb.c
 
 PS_SRCS		= \
-				$(wildcard source/shared/*.c) \
+				$(wildcard source/shared/*/*.c) \
 				$(wildcard source/push_swap/*.c)
 
 CH_OBJS		= $(CH_SRCS:.c=.o)

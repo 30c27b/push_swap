@@ -6,12 +6,13 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:13:53 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 21:14:51 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/04 22:01:52 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 #include "shared.h"
+#include "carbon/llst.h"
 #include "carbon/fmt.h"
 
 int		main(int argc, char **argv)
