@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:15:35 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/06 12:59:41 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/06 15:03:32 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ int		main(int argc, char **argv)
 	st_b = stack_new(st_a->size);
 	if (!st_b)
 		return (print_error());
+	stacks_print(st_a, st_b);
+	printf("---------\n");
 	if (ps_process(st_a, st_b))
 		return (print_error());
-
+	stacks_print(st_a, st_b);
 }

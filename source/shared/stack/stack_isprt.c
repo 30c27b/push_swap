@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   process.c                                          :+:      :+:    :+:   */
+/*   stack_isprt.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 12:50:51 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/06 15:04:02 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/03/06 14:55:16 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/03/06 15:02:24 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "shared.h"
-#include <stdio.h>
 
-int		ps_process(t_stack *st_a, t_stack *st_b)
+int		stack_isprt(t_stack *st, size_t n)
 {
-	t_llst	*partitions;
-	size_t	i;
+	t_llst	*node;
 
-	i = 0;
-	partitions = NULL;
-	while (st_a->len > 3)
+	node = st->prts;
+	while (node)
 	{
-		if (ps_split(st_a, st_b))
+		if (*(size_t *)node->data == n)
 			return (1);
-		stack_prtadd(st_b, st_b->len);
+		node = node->next;
 	}
-	stacks_print(st_a, st_b);
 	return (0);
 }

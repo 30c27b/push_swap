@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/04 10:04:11 by ancoulon          #+#    #+#              #
-#    Updated: 2021/03/04 22:07:52 by ancoulon         ###   ########.fr        #
+#    Updated: 2021/03/06 15:02:08 by ancoulon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,27 +23,8 @@ CFLAGS		= -Wall -Wextra -Werror \
 				-I./include -I./$(LIBDIR)/include \
 
 CH_SRCS		= \
-				source/checker/inspector.c \
-				source/checker/reader.c \
-				source/checker/main.c \
-				source/checker/interpreter.c \
-				source/shared/utils/print_error.c \
-				source/shared/stack/stack_parse.c \
-				source/shared/stack/stack_print.c \
-				source/shared/stack/stack_new.c \
-				source/shared/stack/stack_free.c \
-				source/shared/inst/inst_pb.c \
-				source/shared/inst/inst_rrr.c \
-				source/shared/inst/inst_rr.c \
-				source/shared/inst/inst_pa.c \
-				source/shared/inst/inst_sa.c \
-				source/shared/inst/inst_ra.c \
-				source/shared/inst/inst_get.c \
-				source/shared/inst/inst_rra.c \
-				source/shared/inst/inst_ss.c \
-				source/shared/inst/inst_sb.c \
-				source/shared/inst/inst_rrb.c \
-				source/shared/inst/inst_rb.c
+				$(wildcard source/shared/*/*.c) \
+				$(wildcard source/checker/*.c)
 
 PS_SRCS		= \
 				$(wildcard source/shared/*/*.c) \

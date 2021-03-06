@@ -6,13 +6,14 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:13:15 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 21:20:20 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/06 15:00:43 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHARED_H
 # define SHARED_H
 
+# include "carbon/llst.h"
 # include <stddef.h>
 # include <stdint.h>
 
@@ -31,15 +32,20 @@ typedef struct	s_stack
 	int64_t	*data;
 	size_t	size;
 	size_t	len;
+	t_llst	*prts;
 }				t_stack;
 
 t_stack			*stack_new(size_t size);
 
 t_stack			*stack_parse(int argc, char **argv);
 
-void			stack_print(t_stack *stack);
+void			stacks_print(t_stack *st_a, t_stack *st_b);
 
 void			stack_free(t_stack *stack);
+
+int				stack_prtadd(t_stack *st, size_t n);
+
+int				stack_isprt(t_stack *st, size_t n);
 
 /*
 ** STACK INSTRUCTIONS ******************************************************* **
