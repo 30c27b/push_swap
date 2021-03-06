@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:15:35 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/06 16:29:07 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/06 16:44:19 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ int		main(int argc, char **argv)
 	st_b = stack_new(st_a->size);
 	if (!st_b)
 		return (print_error());
-	// printf("main_bef %p\n", st_b->data);
-	// if (ps_process(st_a, st_b))
-	// 	return (print_error());
 	stacks_print(st_a, st_b);
-	printf("------\n");
-	inst_ra(st_a, st_b);
+	printf("--------\n");
+	if (ps_process(st_a, st_b))
+		return (print_error());
+	stacks_print(st_a, st_b);
+	printf("--------\n");
+	printf("ret: %zu\n", stack_prtpop(st_b));
 	stacks_print(st_a, st_b);
 }
