@@ -6,11 +6,12 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:20:08 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 21:17:20 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/06 16:28:23 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared.h"
+#include <stdio.h>
 
 void	inst_ra(t_stack *st_a, t_stack *st_b)
 {
@@ -20,7 +21,7 @@ void	inst_ra(t_stack *st_a, t_stack *st_b)
 	(void)st_b;
 	if (st_a->len < 2)
 		return ;
-	i = st_a->len;
+	i = st_a->len - 1;
 	tmp = st_a->data[st_a->len - 1];
 	while (i > 0)
 	{

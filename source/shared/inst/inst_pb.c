@@ -6,11 +6,12 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 13:14:59 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/06 15:16:55 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/06 16:24:13 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared.h"
+#include <stdio.h>
 
 void	inst_pb(t_stack *st_a, t_stack *st_b)
 {

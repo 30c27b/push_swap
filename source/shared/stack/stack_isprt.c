@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 14:55:16 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/06 15:02:24 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/06 15:24:55 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		stack_isprt(t_stack *st, size_t n)
 	node = st->prts;
 	while (node)
 	{
-		if (*(size_t *)node->data == n)
+		if ((size_t)node->data == n)
 			return (1);
 		node = node->next;
 	}
