@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:15:35 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 22:37:12 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/06 12:12:45 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int		main(int argc, char **argv)
 {
 	t_stack	*st_a;
 	t_stack	*st_b;
-	int64_t	med;
 
 	if (argc < 2)
 		return (1);
@@ -30,7 +29,6 @@ int		main(int argc, char **argv)
 	st_b = stack_new(st_a->size);
 	if (!st_b)
 		return (print_error());
-	if (ps_median(st_a, 0, st_a->len, &med))
+	if (ps_split(st_a, st_b))
 		return (print_error());
-	printf("median: %lld\n", med);
 }

@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 10:12:59 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/06 11:27:34 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/03/06 11:21:56 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/03/06 12:12:36 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
+#include "push_swap.h"
 #include "shared.h"
-#include <stddef.h>
-#include <stdint.h>
+#include <stdio.h>
 
-int		ps_median(t_stack *st, size_t start, size_t end, int64_t *med);
-
-int		ps_split(t_stack *st_a, t_stack *st_b);
-
-#endif
+int		ps_split(t_stack *st_a, t_stack *st_b)
+{
+	int64_t	med;
+	size_t	len;
+	size_t	i;
+	
+	if (ps_median(st_a, 0, st_a->len, &med))
+		return (1);
+	i = 0;
+	len = st_a->len;
+	while (i < len)
+	{
+		if (st_a->data[st_a->len - 1] <= med)
+			inst_pb(st_a, st_b);
+		else
+			inst_ra(st_a, st_b);
+		i++;
+	}
+	return (0);
+}
