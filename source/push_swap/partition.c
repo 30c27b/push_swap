@@ -1,35 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   partition.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 10:15:35 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/06 12:59:41 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/03/06 12:15:02 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/03/06 13:05:58 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "shared.h"
+#include "carbon/mem.h"
 #include "carbon/llst.h"
-#include "carbon/fmt.h"
-#include <stdio.h>
 
-int		main(int argc, char **argv)
+int		ps_partition_mark(t_llst **lst, size_t n)
 {
-	t_stack	*st_a;
-	t_stack	*st_b;
+	size_t	*data;
+	t_llst	*node;
 
-	if (argc < 2)
+	data = mem_calloc(sizeof(size_t));
+	if (!data)
 		return (1);
-	st_a = stack_parse(argc, argv);
-	if (!st_a)
-		return (print_error());
-	st_b = stack_new(st_a->size);
-	if (!st_b)
-		return (print_error());
-	if (ps_process(st_a, st_b))
-		return (print_error());
+	*data = n;
+	node = llst_new(data);
+	if (!node)
+		return (1);
+	llst_push(lst, node);
+	return (0);
+}
 
+int		ps_partition_exists(t_llst **lst, size_t n)
+{
+	t_llst	*node;
+
+	node = *lst;
+	while (node)
+	{
+		if (*(size_t *)node->data == n)
+			return (1);
+		node = node->next;
+	}
+	return (0);
 }
