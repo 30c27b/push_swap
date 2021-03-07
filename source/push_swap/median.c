@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 22:11:15 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/06 15:06:27 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/07 11:36:28 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "shared.h"
 #include "carbon/mem.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 static void	swap(int64_t *a, int64_t *b)
 {
@@ -53,11 +54,15 @@ int		ps_median(t_stack *st, size_t start, size_t end, int64_t *med)
 
 	if (st->len == 0)
 		return (0);
-	len = end - start;
+	len = end - start + 1;
 	cpy = mem_calloc(sizeof(int64_t) * len);
 	if (!cpy)
 		return (1);
-	mem_cpy(cpy + start, st->data, sizeof(int64_t) * len);
+	mem_cpy(cpy, st->data + start, sizeof(int64_t) * len);
+	printf("~");
+	for (size_t i = 0; i < len; i++)
+		printf(" %lld", cpy[i]);
+	printf("\n");
 	sort_array(cpy, len);
 	*med = cpy[((len + 1) / 2) - 1];
 	free (cpy);

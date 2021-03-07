@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:13:15 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/06 16:43:00 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/07 11:20:01 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int				stack_prtadd(t_stack *st, size_t n);
 int				stack_isprt(t_stack *st, size_t n);
 
 size_t			stack_prtpop(t_stack *st);
+
+size_t			stack_prtlast(t_stack *st);
 
 /*
 ** STACK INSTRUCTIONS ******************************************************* **
