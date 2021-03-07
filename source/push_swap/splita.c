@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 11:21:56 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/07 11:37:08 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/07 12:20:57 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ps_splita(t_stack *st_a, t_stack *st_b)
 		}
 		i++;
 	}
-	if (len)
+	if (start)
 	{
 		i = 0;
 		while (i++ < rot)

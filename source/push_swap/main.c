@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:15:35 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/07 11:38:59 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/07 12:27:45 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,14 @@ int		main(int argc, char **argv)
 	stacks_print(st_a, st_b);
 	printf("--------\n");
 	ps_splita(st_a, st_b);
+	printf("--------\n");
+	stacks_print(st_a, st_b);
+	printf("--------\n");
+	ps_bringb(st_a, st_b);
+	printf("--------\n");
+	stacks_print(st_a, st_b);
+	printf("--------\n");
+	ps_bringb(st_a, st_b);
 	printf("--------\n");
 	stacks_print(st_a, st_b);
 }
