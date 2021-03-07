@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:15:35 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/07 12:27:45 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/07 13:12:00 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,9 @@ int		main(int argc, char **argv)
 	if (!st_b)
 		return (print_error());
 	stacks_print(st_a, st_b);
+	stack_prtadd(st_a, 7);
 	printf("--------\n");
-	ps_splita(st_a, st_b);
-	printf("--------\n");
-	printf("test1\n");
-	stacks_print(st_a, st_b);
-	printf("--------\n");
-	ps_splita(st_a, st_b);
-	printf("--------\n");
-	stacks_print(st_a, st_b);
-	printf("--------\n");
-	ps_bringb(st_a, st_b);
-	printf("--------\n");
-	stacks_print(st_a, st_b);
-	printf("--------\n");
-	ps_bringb(st_a, st_b);
+	ps_sort(st_a, st_b);
 	printf("--------\n");
 	stacks_print(st_a, st_b);
 }
