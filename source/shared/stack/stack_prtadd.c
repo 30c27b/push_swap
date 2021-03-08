@@ -6,13 +6,12 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 14:47:11 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/07 11:26:12 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/08 10:35:58 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared.h"
 #include "carbon/llst.h"
-
 
 int		stack_prtadd(t_stack *st, size_t n)
 {

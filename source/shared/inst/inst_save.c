@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 09:05:01 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/08 09:09:58 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/08 10:35:42 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		inst_save(char *inst, t_llst **insts, t_stack *st_a, t_stack *st_b)
 {
 	t_llst	*node;
 	t_inst	in;
-	
+
 	node = llst_new(inst);
 	if (!node)
 		return (1);
