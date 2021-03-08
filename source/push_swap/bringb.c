@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/07 12:10:26 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/07 12:59:20 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/08 09:18:20 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "shared.h"
 #include <stdio.h>
 
-int		ps_bringb(t_stack *st_a, t_stack *st_b)
+int		ps_bringb(t_stack *st_a, t_stack *st_b, t_llst **insts)
 {
 	size_t	prt;
 	size_t	i;
@@ -27,7 +27,7 @@ int		ps_bringb(t_stack *st_a, t_stack *st_b)
 		i++;
 	while (i > prt)
 	{
-		inst_pa(st_a, st_b);
+		inst_save("pa", insts, st_a, st_b);
 		i--;
 	}
 	return (0);

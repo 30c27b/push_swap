@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 22:11:15 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/07 11:36:28 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/08 09:19:10 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,6 @@ int		ps_median(t_stack *st, size_t start, size_t end, int64_t *med)
 	if (!cpy)
 		return (1);
 	mem_cpy(cpy, st->data + start, sizeof(int64_t) * len);
-	printf("~");
-	for (size_t i = 0; i < len; i++)
-		printf(" %lld", cpy[i]);
-	printf("\n");
 	sort_array(cpy, len);
 	*med = cpy[((len + 1) / 2) - 1];
 	free (cpy);

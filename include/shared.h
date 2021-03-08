@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:13:15 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/07 11:20:01 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/08 09:10:17 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ typedef struct	s_inst
 }				t_inst;
 
 t_inst			inst_get(char *name);
+
+int				inst_save(char *inst, t_llst **insts,
+t_stack *st_a, t_stack *st_b);
 
 void			inst_sa(t_stack *st_a, t_stack *st_b);
 
