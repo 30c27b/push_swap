@@ -6,14 +6,12 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:32:17 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 15:43:39 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/03/08 10:46:08 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared.h"
 #include "carbon/str.h"
-
-#include <stdio.h>
 
 t_inst	inst_get(char *name)
 {
