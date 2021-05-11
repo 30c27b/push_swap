@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:13:15 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/08 10:39:06 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/07 17:47:40 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,7 @@
 # include <stddef.h>
 # include <stdint.h>
 
-/*
-** UTILS ******************************************************************** **
-*/
-
 int				print_error(void);
-
-/*
-** STACK ******************************************************************** **
-*/
 
 typedef struct	s_stack
 {
@@ -48,10 +40,6 @@ int				stack_isprt(t_stack *st, size_t n);
 size_t			stack_prtpop(t_stack *st);
 
 size_t			stack_prtlast(t_stack *st);
-
-/*
-** STACK INSTRUCTIONS ******************************************************* **
-*/
 
 typedef struct	s_inst
 {
