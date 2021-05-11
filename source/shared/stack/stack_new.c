@@ -6,14 +6,14 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 12:09:00 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 12:37:32 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/07 18:50:23 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "shared.h"
 #include "carbon/mem.h"
 
-t_stack		*stack_new(size_t size)
+t_stack	*stack_new(size_t size)
 {
 	t_stack	*stack;
 

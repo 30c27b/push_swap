@@ -6,7 +6,7 @@
 #    By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/04 10:04:11 by ancoulon          #+#    #+#              #
-#    Updated: 2021/03/08 10:41:34 by ancoulon         ###   ########.fr        #
+#    Updated: 2021/05/07 19:38:03 by ancoulon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,12 +37,8 @@ SH_SRCS		= \
 				source/shared/inst/inst_sb.c \
 				source/shared/inst/inst_ss.c \
 				source/shared/stack/stack_free.c \
-				source/shared/stack/stack_isprt.c \
 				source/shared/stack/stack_new.c \
 				source/shared/stack/stack_parse.c \
-				source/shared/stack/stack_prtadd.c \
-				source/shared/stack/stack_prtlast.c \
-				source/shared/stack/stack_prtpop.c \
 				source/shared/utils/print_error.c
 
 CH_SRCS		= \

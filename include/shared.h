@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:13:15 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/07 17:47:40 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/11 10:48:22 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,61 +17,51 @@
 # include <stddef.h>
 # include <stdint.h>
 
-int				print_error(void);
+int	print_error(void);
 
-typedef struct	s_stack
+typedef struct s_stack
 {
 	int64_t	*data;
 	size_t	size;
 	size_t	len;
-	t_llst	*prts;
-}				t_stack;
+}	t_stack;
 
-t_stack			*stack_new(size_t size);
+t_stack	*stack_new(size_t size);
 
-t_stack			*stack_parse(int argc, char **argv);
+t_stack	*stack_parse(int argc, char **argv);
 
-void			stack_free(t_stack *stack);
+void	stack_free(t_stack *stack);
 
-int				stack_prtadd(t_stack *st, size_t n);
-
-int				stack_isprt(t_stack *st, size_t n);
-
-size_t			stack_prtpop(t_stack *st);
-
-size_t			stack_prtlast(t_stack *st);
-
-typedef struct	s_inst
+typedef struct s_inst
 {
 	char	*name;
 	void	(*exec)(t_stack *, t_stack *);
-}				t_inst;
+}	t_inst;
 
-t_inst			inst_get(char *name);
+t_inst	inst_get(char *name);
 
-int				inst_save(char *inst, t_llst **insts,
-t_stack *st_a, t_stack *st_b);
+int	inst_save(char *inst, t_llst **insts, t_stack *st_a, t_stack *st_b);
 
-void			inst_sa(t_stack *st_a, t_stack *st_b);
+void	inst_sa(t_stack *st_a, t_stack *st_b);
 
-void			inst_sb(t_stack *st_a, t_stack *st_b);
+void	inst_sb(t_stack *st_a, t_stack *st_b);
 
-void			inst_ss(t_stack *st_a, t_stack *st_b);
+void	inst_ss(t_stack *st_a, t_stack *st_b);
 
-void			inst_pa(t_stack *st_a, t_stack *st_b);
+void	inst_pa(t_stack *st_a, t_stack *st_b);
 
-void			inst_pb(t_stack *st_a, t_stack *st_b);
+void	inst_pb(t_stack *st_a, t_stack *st_b);
 
-void			inst_ra(t_stack *st_a, t_stack *st_b);
+void	inst_ra(t_stack *st_a, t_stack *st_b);
 
-void			inst_rb(t_stack *st_a, t_stack *st_b);
+void	inst_rb(t_stack *st_a, t_stack *st_b);
 
-void			inst_rr(t_stack *st_a, t_stack *st_b);
+void	inst_rr(t_stack *st_a, t_stack *st_b);
 
-void			inst_rra(t_stack *st_a, t_stack *st_b);
+void	inst_rra(t_stack *st_a, t_stack *st_b);
 
-void			inst_rrb(t_stack *st_a, t_stack *st_b);
+void	inst_rrb(t_stack *st_a, t_stack *st_b);
 
-void			inst_rrr(t_stack *st_a, t_stack *st_b);
+void	inst_rrr(t_stack *st_a, t_stack *st_b);
 
 #endif
