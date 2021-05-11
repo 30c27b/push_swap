@@ -6,7 +6,7 @@
 #    By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/04 10:04:11 by ancoulon          #+#    #+#              #
-#    Updated: 2021/05/07 19:38:03 by ancoulon         ###   ########.fr        #
+#    Updated: 2021/05/11 12:18:11 by ancoulon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ SH_SRCS		= \
 				source/shared/stack/stack_free.c \
 				source/shared/stack/stack_new.c \
 				source/shared/stack/stack_parse.c \
-				source/shared/utils/print_error.c
+				source/shared/utils/print_error.c \
+				source/shared/stack/stack_print.c
 
 CH_SRCS		= \
 				source/checker/inspector.c \
@@ -48,13 +49,11 @@ CH_SRCS		= \
 				source/checker/reader.c
 
 PS_SRCS		= \
-				source/push_swap/bringb.c \
 				source/push_swap/main.c \
-				source/push_swap/median.c \
 				source/push_swap/print_insts.c \
 				source/push_swap/process.c \
-				source/push_swap/sort.c \
-				source/push_swap/splita.c
+				source/push_swap/stack3.c \
+				source/push_swap/stack5.c
 
 SH_OBJS		= $(SH_SRCS:.c=.o)
 
