@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:39:47 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/11 14:26:27 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/11 16:50:52 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,28 @@
 
 static int rotate_stack(t_stack *st_a, t_stack *st_b, t_llst **insts, int64_t target)
 {
-	while (st_a->data[st_a->len - 1] < target)
+	size_t	i;
+	size_t	len;
+	int		br;
+
+	i = 0;
+	// while (st_a->data[st_a->len - 1] < target && i++ < 3)
+	// {
+	// 	if (inst_save("ra", insts, st_a, st_b))
+	// 		return (1);
+	// }
+	len = st_a->len;
+	br = 0;
+	if (st_a->data[0] <= target)
 	{
+		if (inst_save("pa", insts, st_a, st_b))
+			return (1);
 		if (inst_save("ra", insts, st_a, st_b))
+			return (1);
+	}
+	if (st_a->data[st_a->len - 1] >= target)
+	{
+		if (inst_save("pa", insts, st_a, st_b))
 			return (1);
 	}
 	return (0);
@@ -46,3 +65,4 @@ int	ps_stack5(t_stack *st_a, t_stack *st_b, t_llst **insts)
 	}
 	return (0);
 }
+
