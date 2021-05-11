@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:15:35 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/08 09:18:49 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/07 19:38:20 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "carbon/fmt.h"
 #include <stdio.h>
 
-int		main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stack	*st_a;
 	t_stack	*st_b;

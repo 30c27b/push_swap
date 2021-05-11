@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:12:59 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/08 09:15:46 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/07 19:41:32 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,10 @@
 # include <stddef.h>
 # include <stdint.h>
 
-int		ps_median(t_stack *st, size_t start, size_t end, int64_t *med);
+int	ps_process(t_stack *st_a, t_stack *st_b, t_llst **insts);
 
-int		ps_splita(t_stack *st_a, t_stack *st_b, t_llst **insts);
+int	ps_stack3(t_stack *st_a, t_stack *st_b, t_llst **insts);
 
-int		ps_process(t_stack *st_a, t_stack *st_b, t_llst **insts);
-
-int		ps_sort(t_stack *st_a, t_stack *st_b, t_llst **insts);
-
-int		ps_bringb(t_stack *st_a, t_stack *st_b, t_llst **insts);
-
-void	ps_print_insts(t_llst *insts);
+void ps_print_insts(t_llst *insts);
 
 #endif

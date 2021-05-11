@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_prtadd.c                                     :+:      :+:    :+:   */
+/*   stack3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/06 14:47:11 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/08 10:35:58 by ancoulon         ###   ########.fr       */
+/*   Created: 2021/05/07 19:39:47 by ancoulon          #+#    #+#             */
+/*   Updated: 2021/05/07 20:39:25 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include "shared.h"
-#include "carbon/llst.h"
 
-int		stack_prtadd(t_stack *st, size_t n)
+int	ps_stack3(t_stack *st_a, t_stack *st_b, t_llst **insts)
 {
-	t_llst	*node;
-
-	if (!n)
-		return (0);
-	node = llst_new((void *)n);
-	if (!node)
-		return (1);
-	llst_push(&st->prts, node);
-	return (0);
+	if (st_a->data[2] > st_a->data[1] && st_a->data[1] > st_a->data[0])
+	{
+		if (inst_save('sa', insts, st_a, st_b))
+			return (1);
+		if (inst_save('sa', insts, st_a, st_b))
+			return (1);
+	}
+	else if (st_a->data[2] > st_a->data[1] && st_a->data[1] < st_a->data[0])
+	{
+		
+	}
 }
