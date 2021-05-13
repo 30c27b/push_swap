@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:47:38 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/04 21:14:30 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/13 12:39:12 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ t_llst		*sh_reader(void)
 	{
 		node = llst_new(line);
 		if (!node)
-			return (NULL);
+			error_exit();
 		llst_push(&head, node);
 	}
 	node = llst_new(line);
 	if (!node)
-		return (NULL);
+		error_exit();
 	llst_push(&head, node);
 	return (head);
 }

@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 12:04:42 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/07 18:51:01 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/13 12:41:52 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,11 @@ t_stack	*stack_parse(int argc, char **argv)
 	size_t	i;
 
 	stack = stack_new(argc - 1);
-	if (!stack)
-		return (NULL);
 	i = 0;
 	while (i < stack->size)
 	{
 		if (unsafe_input(argv[i + 1]))
-		{
-			stack_free(stack);
-			return (NULL);
-		}
+			error_exit();
 		stack->data[stack->size - i - 1] = types_str2int(argv[i + 1]);
 		i++;
 	}

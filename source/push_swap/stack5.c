@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:39:47 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/13 12:23:13 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/13 14:01:18 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,21 @@
 #include "shared.h"
 #include <stdio.h>
 
-static int rotate_stack(t_stack *st_a, t_stack *st_b, t_llst **insts, int64_t target)
+static void rotate_stack(t_stack *st_a, t_stack *st_b, t_llst **insts, int64_t target)
 {
 	size_t	i;
 	size_t	j;
-	size_t	len;
 
 	i = 0;
 	j = 0;
-	len = st_a->len;
+
 	if (st_a->data[0] <= target)
 	{
-		if (inst_save("pa", insts, st_a, st_b))
-			return (1);
-		if (inst_save("ra", insts, st_a, st_b))
-			return (1);
+		inst_save("pa", insts, st_a, st_b);
+		inst_save("ra", insts, st_a, st_b);
 	}
 	else if (st_a->data[st_a->len - 1] >= target)
-	{
-		if (inst_save("pa", insts, st_a, st_b))
-			return (1);
-	}
+		inst_save("pa", insts, st_a, st_b);
 	else
 	{
 		while (st_a->data[st_a->len - 1] < target)
@@ -42,15 +36,13 @@ static int rotate_stack(t_stack *st_a, t_stack *st_b, t_llst **insts, int64_t ta
 			i++;
 			inst_save("ra", insts, st_a, st_b);
 		}
-		if (inst_save("pa", insts, st_a, st_b))
-			return (1);
+		inst_save("pa", insts, st_a, st_b);
 		while (j++ < i)
 			inst_save("rra", insts, st_a, st_b);
 	}
-	return (0);
 }
 
-int	ps_stack5(t_stack *st_a, t_stack *st_b, t_llst **insts)
+void	ps_stack5(t_stack *st_a, t_stack *st_b, t_llst **insts)
 {
 	size_t	push;
 	size_t	i;
@@ -58,16 +50,12 @@ int	ps_stack5(t_stack *st_a, t_stack *st_b, t_llst **insts)
 	push = st_a->size - 3;
 	i = 0;
 	while (i++ < push)
-		if (inst_save("pb", insts, st_a, st_b))
-			return (1);
-	if (ps_stack3(st_a, st_b, insts))
-		return (1);
+		inst_save("pb", insts, st_a, st_b);
+	ps_stack3(st_a, st_b, insts);
 	i = 0;
 	while (i++ < push)
 	{
-		if (rotate_stack(st_a, st_b, insts, st_b->data[st_b->len - 1]))
-			return (1);
+		rotate_stack(st_a, st_b, insts, st_b->data[st_b->len - 1]);
 	}
-	return (0);
 }
 
