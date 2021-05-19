@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:45:00 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/19 14:25:37 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/19 14:35:53 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ t_bigchunkus *data)
 	if (data->target <= (st_a->len / 2))
 	{
 		printf("from bottom\n");
-		rot = st_a->len;
-		rot_type = "ra";
+		rot = data->target + 1;
+		rot_type = "rra";
 	}
 	else
 	{
 		printf("from top\n");
-		rot = st_a->len - data->target;
-		rot_type = "rra";
+		rot = st_a->len - data->target - 1;
+		rot_type = "ra";
 	}
 	i = 0;
 	while (i++ < rot)
@@ -81,8 +81,6 @@ t_bigchunkus *data)
 	{
 		data->hold[0] = -1;
 		data->hold[1] = -1;
-		printf("hold0 : %lld(%lld)\n", data->hold[0], st_a->data[data->hold[0]]);
-		printf("hold1 : %lld(%lld)\n", data->hold[1], st_a->data[data->hold[1]]);
 		find_element(st_a, data);
 		printf("hold0 : %lld(%lld)\n", data->hold[0], st_a->data[data->hold[0]]);
 		printf("hold1 : %lld(%lld)\n", data->hold[1], st_a->data[data->hold[1]]);
@@ -96,7 +94,7 @@ t_bigchunkus *data)
 			data->target = data->hold[0];
 		else
 			data->target = data->hold[1];
-		printf("target = %zu\n", data->target);
+		printf("target = %zu(%lld)\n", data->target, st_a->data[data->target]);
 		move_element(st_a, st_b, insts, data);
 		break;
 	}
