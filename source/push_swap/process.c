@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 12:50:51 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/13 13:59:58 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/19 12:38:56 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,9 @@ void	ps_process(t_stack *st_a, t_stack *st_b, t_llst **insts)
 	else if (st_a->size <= 5)
 	{
 		ps_stack5(st_a, st_b, insts);
+	}
+	else
+	{
+		ps_stack100(st_a, st_b, insts);
 	}
 }

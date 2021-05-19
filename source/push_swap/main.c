@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:15:35 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/13 14:01:49 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/13 15:48:35 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	t_llst	*insts;
 
 	if (argc < 2)
-		error_exit();
+		exit(EXIT_SUCCESS);
 	st_a = stack_parse(argc, argv);
 	st_b = stack_new(st_a->size);
 	ps_process(st_a, st_b, &insts);
@@ -37,4 +37,5 @@ int	main(int argc, char **argv)
 	// 	error_exit();
 	// stack_print(st_a, st_b);
 	// ps_print_insts(insts);
+	exit(EXIT_SUCCESS);
 }
