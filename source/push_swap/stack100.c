@@ -6,12 +6,13 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:45:00 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/19 14:35:53 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/19 15:20:07 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "shared.h"
+#include "carbon/str.h"
 #include <stdio.h>
 
 static void	move_element(t_stack *st_a, t_stack *st_b, t_llst **insts,
@@ -35,7 +36,9 @@ t_bigchunkus *data)
 	}
 	i = 0;
 	while (i++ < rot)
+	{
 		inst_save(rot_type, insts, st_a, st_b);
+	}
 	printf("rotations: %zu of type %s\n", rot, rot_type);
 	printf("\n\n\nstack after rotates:\n");
 	stack_print(st_a, st_b);
