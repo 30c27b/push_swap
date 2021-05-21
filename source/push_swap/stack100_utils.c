@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 15:03:03 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/19 13:43:08 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/21 10:40:54 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int64_t	*sort_stack(t_stack *stack)
 	int64_t	*sorted_stack;
 	size_t	i;
 
-	sorted_stack = mem_calloc(stack->size);
+	sorted_stack = mem_calloc(sizeof(int64_t) * stack->size);
 	if (!sorted_stack)
 		error_exit();
 	i = 0;
