@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:45:00 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/21 12:02:15 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/25 16:00:19 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ static void	find_element(t_stack *st_a, t_bigchunkus *data)
 static void	converge_chunk(t_stack *st_a, t_stack *st_b, t_llst **insts,
 t_bigchunkus *data)
 {
-	while (st_a->len > 5)
+	while (1)
 	{
 		data->hold[0] = -1;
 		data->hold[1] = -1;
@@ -142,10 +142,11 @@ void	ps_stack100(t_stack *st_a, t_stack *st_b, t_llst **insts)
 		converge_chunk(st_a, st_b, insts, &data);
 		data.chunk++;
 	}
-	ps_stack5(st_a, st_b, insts);
-	while (st_b->len > 0)
-	{
-		printf("next\n");
-		find_next(st_a, st_b, insts, &data);
-	}
+	printf("size: %zu\n", st_a->len);
+	ps_process(st_a, st_b, insts);
+	// while (st_b->len > 0)
+	// {
+	// 	printf("next\n");
+	// 	find_next(st_a, st_b, insts, &data);
+	// }
 }
