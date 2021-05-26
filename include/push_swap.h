@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:12:59 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/26 12:37:21 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/26 18:23:33 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ void	ps_stack5(t_stack *st_a, t_stack *st_b, t_llst **insts);
 void	ps_stack100(t_stack *st_a, t_stack *st_b, t_llst **insts);
 
 int64_t	*sort_stack(t_stack *stack);
+
+size_t	move_top_difficulty(t_stack *stack, size_t index);
+
+void	move_top(t_stack *st_a, t_stack *st_b, t_llst **insts, size_t index);
 
 void	ps_print_insts(t_llst *insts);
 

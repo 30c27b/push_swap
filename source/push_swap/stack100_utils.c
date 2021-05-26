@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 15:03:03 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/26 12:40:07 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/26 18:26:37 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,38 @@
 #include "shared.h"
 #include "carbon/mem.h"
 #include <stdio.h>
+
+size_t	move_top_difficulty(t_stack *stack, size_t index)
+{
+	if (index < stack->len / 2)
+	{
+		return (index + 1);
+	}
+	else
+	{
+		return (stack->len - index - 1);
+	}
+}
+
+void	move_top(t_stack *st_a, t_stack *st_b, t_llst **insts, size_t index)
+{
+	size_t	i;
+	size_t	len;
+
+	i = 0;
+	if (index < st_b->len / 2)
+	{
+		len = index + 1;
+		while (i++ < len)
+			inst_save("rra", insts, st_a, st_b);
+	}
+	else
+	{
+		len = (st_b->len - index - 1);
+		while (i++ < len)
+			inst_save("ra", insts, st_a, st_b);
+	}
+}
 
 static void	bubble_sort(int64_t *arr, size_t size)
 {
