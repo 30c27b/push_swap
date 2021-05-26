@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 12:50:51 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/25 15:02:20 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/26 12:19:17 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	ps_process(t_stack *st_a, t_stack *st_b, t_llst **insts)
 	}
 	else
 	{
-		printf("process\n");
 		ps_stack100(st_a, st_b, insts);
 	}
 }
