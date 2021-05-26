@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 15:03:03 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/21 10:40:54 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/26 12:40:07 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,6 @@
 #include "shared.h"
 #include "carbon/mem.h"
 #include <stdio.h>
-
-size_t	chunk_calculator(size_t size)
-{
-	size_t	chunk_nbr;
-
-	if (size < 300) {
-		chunk_nbr = 5;
-	}
-	else
-	{
-		chunk_nbr = 11;
-	}
-	return (chunk_nbr);
-}
 
 static void	bubble_sort(int64_t *arr, size_t size)
 {
