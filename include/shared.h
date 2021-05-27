@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:13:15 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/13 12:51:03 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 11:20:08 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <stddef.h>
 # include <stdint.h>
 
-int	error_exit(void);
-
 typedef struct s_stack
 {
 	int64_t	*data;
@@ -26,19 +24,21 @@ typedef struct s_stack
 	size_t	len;
 }	t_stack;
 
+typedef struct s_inst
+{
+	char	*name;
+	void	(*exec)(t_stack *, t_stack *);
+}	t_inst;
+
+int		error_exit(void);
+
 t_stack	*stack_new(size_t size);
 
 t_stack	*stack_parse(int argc, char **argv);
 
 void	stack_free(t_stack *stack);
 
-void stack_print(t_stack *st_a, t_stack *st_b);
-
-typedef struct s_inst
-{
-	char	*name;
-	void	(*exec)(t_stack *, t_stack *);
-}	t_inst;
+void	stack_print(t_stack *st_a, t_stack *st_b);
 
 t_inst	inst_get(char *name);
 

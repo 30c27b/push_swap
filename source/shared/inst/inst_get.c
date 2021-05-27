@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:32:17 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/03/08 10:46:08 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 11:31:38 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_inst	inst_get(char *name)
 		{"sa", &inst_sa}, {"sb", &inst_sb}, {"ss", &inst_ss},
 		{"pa", &inst_pa}, {"pb", &inst_pb}, {"ra", &inst_ra},
 		{"rb", &inst_rb}, {"rr", &inst_rr}, {"rra", &inst_rra},
-		{"rrb", &inst_rrb}, {"rrr", &inst_rrr} };
+		{"rrb", &inst_rrb}, {"rrr", &inst_rrr}};
 	size_t			i;
 
 	i = 0;

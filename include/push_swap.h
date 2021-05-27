@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:12:59 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/27 11:09:51 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 11:19:11 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_chunks
 	size_t	current_max;
 }	t_chunks;
 
-int	is_sorted(t_stack *stack);
+int		is_sorted(t_stack *stack);
 
 void	check_duplicates(t_stack *stack);
 

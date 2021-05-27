@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 15:47:38 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/13 12:39:12 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 11:20:54 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "carbon/io.h"
 #include <unistd.h>
 
-t_llst		*sh_reader(void)
+t_llst	*sh_reader(void)
 {
 	t_llst	*head;
 	t_llst	*node;

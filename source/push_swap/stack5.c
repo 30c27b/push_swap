@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:39:47 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/21 11:02:49 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 11:31:26 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 #include "shared.h"
 #include <stdio.h>
 
-static void rotate_stack(t_stack *st_a, t_stack *st_b, t_llst **insts, int64_t target)
+static void	rotate_stack(t_stack *st_a, t_stack *st_b, t_llst **insts,
+int64_t target)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
 	j = 0;
-
 	if (st_a->data[0] <= target)
 	{
 		inst_save("pa", insts, st_a, st_b);
@@ -58,4 +58,3 @@ void	ps_stack5(t_stack *st_a, t_stack *st_b, t_llst **insts)
 		rotate_stack(st_a, st_b, insts, st_b->data[st_b->len - 1]);
 	}
 }
-

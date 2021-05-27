@@ -6,14 +6,14 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 21:06:41 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/13 12:40:00 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 11:20:26 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 #include "shared.h"
 
-int		sh_inspector(t_stack *st_a, t_stack *st_b)
+int	sh_inspector(t_stack *st_a, t_stack *st_b)
 {
 	size_t	i;
 
