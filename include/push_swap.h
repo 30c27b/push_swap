@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:12:59 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/27 11:19:11 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 12:40:31 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "carbon/llst.h"
 # include <stddef.h>
 # include <stdint.h>
+# include <sys/types.h>
 
 typedef struct s_chunks
 {
