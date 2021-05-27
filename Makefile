@@ -6,7 +6,7 @@
 #    By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/04 10:04:11 by ancoulon          #+#    #+#              #
-#    Updated: 2021/05/19 12:35:38 by ancoulon         ###   ########.fr        #
+#    Updated: 2021/05/27 11:11:03 by ancoulon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,9 @@ PS_SRCS		= \
 				source/push_swap/stack3.c \
 				source/push_swap/stack5.c \
 				source/push_swap/stack100.c \
-				source/push_swap/stack100_utils.c
+				source/push_swap/stack100_utils.c \
+				source/push_swap/is_sorted.c \
+				source/push_swap/has_duplicates.c
 
 SH_OBJS		= $(SH_SRCS:.c=.o)
 
