@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:13:15 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/27 11:20:08 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 12:36:32 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ t_stack	*stack_new(size_t size);
 t_stack	*stack_parse(int argc, char **argv);
 
 void	stack_free(t_stack *stack);
-
-void	stack_print(t_stack *st_a, t_stack *st_b);
 
 t_inst	inst_get(char *name);
 

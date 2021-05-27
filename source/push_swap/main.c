@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:15:35 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/27 11:16:14 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 12:38:49 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "shared.h"
 #include "carbon/llst.h"
 #include "carbon/fmt.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 int	main(int argc, char **argv)

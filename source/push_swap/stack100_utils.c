@@ -6,14 +6,13 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 15:03:03 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/27 09:19:23 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 12:39:04 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "shared.h"
 #include "carbon/mem.h"
-#include <stdio.h>
 
 size_t	move_top_difficulty(t_stack *stack, size_t index)
 {

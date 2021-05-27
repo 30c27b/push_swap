@@ -6,13 +6,12 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:39:47 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/13 13:51:53 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 12:38:57 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "shared.h"
-#include <stdio.h>
 
 void	ps_stack3(t_stack *st_a, t_stack *st_b, t_llst **insts)
 {
