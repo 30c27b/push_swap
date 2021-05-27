@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 15:03:03 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/26 18:26:37 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/27 09:19:23 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	move_top(t_stack *st_a, t_stack *st_b, t_llst **insts, size_t index)
 	{
 		len = index + 1;
 		while (i++ < len)
-			inst_save("rra", insts, st_a, st_b);
+			inst_save("rrb", insts, st_a, st_b);
 	}
 	else
 	{
 		len = (st_b->len - index - 1);
 		while (i++ < len)
-			inst_save("ra", insts, st_a, st_b);
+			inst_save("rb", insts, st_a, st_b);
 	}
 }
 
