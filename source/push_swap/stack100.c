@@ -6,13 +6,14 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:45:00 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/27 12:40:16 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/28 13:09:19 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "shared.h"
 #include "carbon/str.h"
+#include <stdlib.h>
 
 static size_t	find_edge(t_stack *st_a, t_stack *st_b, t_llst **insts)
 {
@@ -95,4 +96,5 @@ void	ps_stack100(t_stack *st_a, t_stack *st_b, t_llst **insts)
 		sort_to_a(st_a, st_b, insts);
 		data.current++;
 	}
+	free(data.sorted);
 }
