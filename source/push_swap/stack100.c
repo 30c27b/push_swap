@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:45:00 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/28 13:09:19 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/28 14:23:57 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	ps_stack100(t_stack *st_a, t_stack *st_b, t_llst **insts)
 	(void)st_b;
 	data.sorted = sort_stack(st_a);
 	data.size = st_a->size;
-	data.chunks = 8;
+	data.chunks = chunks_nbr(st_a->size);
 	data.chunks_size = data.size / (data.chunks - 1);
 	data.current = 0;
 	while (data.current < data.chunks)

@@ -21,5 +21,5 @@ do
 done
 echo ${TAB[*]} > values
 ARG=$(cat values);
-#./push_swap $ARG # |  ./checker $ARG
+./push_swap $ARG | wc -l
 ./push_swap $ARG | ./checker $ARG

@@ -6,13 +6,24 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 15:03:03 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/27 12:39:04 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/28 14:34:51 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "shared.h"
 #include "carbon/mem.h"
+
+size_t	chunks_nbr(size_t size)
+{
+	size_t	ret;
+
+	if (size < 300)
+		ret = 5;
+	else
+		ret = 9;
+	return (ret);
+}
 
 size_t	move_top_difficulty(t_stack *stack, size_t index)
 {

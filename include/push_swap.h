@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:12:59 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/27 12:40:31 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/28 14:23:35 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ size_t	move_top_difficulty(t_stack *stack, size_t index);
 void	move_top(t_stack *st_a, t_stack *st_b, t_llst **insts, size_t index);
 
 void	ps_print_insts(t_llst *insts);
+
+size_t	chunks_nbr(size_t size);
 
 #endif
