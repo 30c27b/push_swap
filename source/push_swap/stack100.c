@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:45:00 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/28 15:52:36 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/05/28 15:55:22 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	ps_stack100(t_stack *st_a, t_stack *st_b, t_llst **insts)
 	while (data.current < data.chunks)
 	{
 		data.current_max = data.chunks_size * (data.current + 1);
-		if (data.current_max > (data.size -1))
+		if (data.current_max > data.size - 1)
 			data.current_max = data.size - 1;
 		data.current_min = data.chunks_size * data.current;
 		move_chunk_to_b(st_a, st_b, insts, &data);
