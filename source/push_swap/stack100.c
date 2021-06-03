@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/11 14:45:00 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/28 15:55:22 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/06/03 11:57:35 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,21 @@ t_chunks *data)
 	}
 }
 
+static size_t	how_much_chunks(size_t size)
+{
+	if (size <= 50)
+		return (2);
+	if (size <= 100)
+		return (3);
+	if (size <= 300)
+		return (6);
+	if (size <= 500)
+		return (6);
+	if (size <= 700)
+		return (7);
+	return (10);
+}
+
 void	ps_stack100(t_stack *st_a, t_stack *st_b, t_llst **insts)
 {
 	t_chunks	data;
@@ -87,7 +102,7 @@ void	ps_stack100(t_stack *st_a, t_stack *st_b, t_llst **insts)
 	(void)st_b;
 	data.sorted = sort_stack(st_a);
 	data.size = st_a->size;
-	data.chunks = 5;
+	data.chunks = how_much_chunks(data.size);
 	data.chunks_size = data.size / data.chunks;
 	if (data.size % data.chunks != 0)
 		data.chunks_size += 1;
