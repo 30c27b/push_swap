@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 12:04:42 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/28 13:23:50 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/06/03 11:28:31 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,27 @@
 #include "carbon.h"
 #include <stdint.h>
 #include <limits.h>
+
+static	int	check_overflows(char *s)
+{
+	size_t	i;
+	size_t	len;
+
+	i = 0;
+	len = 0;
+	if (s[i] && (s[i] == '-' || s[i] == '+'))
+		i++;
+	while (s[i] == '0')
+		i++;
+	while (s[i])
+	{
+		i++;
+		len++;
+	}
+	if (len > 10)
+		return (1);
+	return (0);
+}
 
 static int	unsafe_input(char *s)
 {
@@ -41,7 +62,7 @@ t_stack	*stack_parse(int argc, char **argv)
 	i = 0;
 	while (i < stack->size)
 	{
-		if (unsafe_input(argv[i + 1]))
+		if (unsafe_input(argv[i + 1]) || check_overflows(argv[i + 1]))
 		{
 			stack_free(stack);
 			error_exit();

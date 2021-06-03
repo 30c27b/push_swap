@@ -6,3 +6,4 @@
 *.DS_Store
 values
 .vscode/
+pyviz.py
