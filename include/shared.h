@@ -6,7 +6,7 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/04 10:13:15 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/27 12:40:37 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/08/10 11:01:25 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,11 @@ void	inst_rra(t_stack *st_a, t_stack *st_b);
 void	inst_rrb(t_stack *st_a, t_stack *st_b);
 
 void	inst_rrr(t_stack *st_a, t_stack *st_b);
+
+
+
+
+
+void stack_print(t_stack *st_a, t_stack *st_b);
 
 #endif

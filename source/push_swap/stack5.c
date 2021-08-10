@@ -6,54 +6,74 @@
 /*   By: ancoulon <ancoulon@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/07 19:39:47 by ancoulon          #+#    #+#             */
-/*   Updated: 2021/05/27 12:39:00 by ancoulon         ###   ########.fr       */
+/*   Updated: 2021/08/10 11:57:27 by ancoulon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "shared.h"
 
-static void	rotate_stack(t_stack *st_a, t_stack *st_b, t_llst **insts,
-int64_t target)
+#include <stdio.h>
+
+void	ps_stack4(t_stack *st_a, t_stack *st_b, t_llst **insts)
+{
+	int64_t	val;
+	size_t	i;
+
+	val = st_a->data[st_a->len - 1];
+	inst_save("pb", insts, st_a, st_b);
+	ps_stack3(st_a, st_b, insts);
+	i = 0;
+	while (i < 3)
+	{
+		if (st_a->data[st_a->len - 1] > val)
+			break;
+		inst_save("ra", insts, st_a, st_b);
+		i++;
+	}
+	inst_save("pa", insts, st_a, st_b);
+	while (i > 0)
+	{
+		inst_save("rra", insts, st_a, st_b);
+		i--;
+	}
+}
+
+static size_t	find_loc(t_stack *st_a, t_stack *st_b, t_llst **insts, size_t rot)
 {
 	size_t	i;
-	size_t	j;
 
 	i = 0;
-	j = 0;
-	if (st_a->data[0] <= target)
+	while (i < 3 - rot)
 	{
-		inst_save("pa", insts, st_a, st_b);
+		if (st_a->data[st_a->len - 1] > st_b->data[st_b->len - 1])
+			break;
 		inst_save("ra", insts, st_a, st_b);
 	}
-	else if (st_a->data[st_a->len - 1] >= target)
-		inst_save("pa", insts, st_a, st_b);
-	else
-	{
-		while (st_a->data[st_a->len - 1] < target)
-		{
-			i++;
-			inst_save("ra", insts, st_a, st_b);
-		}
-		inst_save("pa", insts, st_a, st_b);
-		while (j++ < i)
-			inst_save("rra", insts, st_a, st_b);
-	}
+	inst_save("pa", insts, st_a, st_b);
+	return (i);
 }
 
 void	ps_stack5(t_stack *st_a, t_stack *st_b, t_llst **insts)
 {
-	size_t	push;
 	size_t	i;
+	size_t	j;
+	size_t	tot_rot;
 
-	push = st_a->len - 3;
-	i = 0;
-	while (i++ < push)
-		inst_save("pb", insts, st_a, st_b);
+	inst_save("pb", insts, st_a, st_b);
+	inst_save("pb", insts, st_a, st_b);
+	if (st_b->data[st_b->len - 2] < st_b->data[st_b->len - 1])
+		inst_save("sb", insts, st_a, st_b);
 	ps_stack3(st_a, st_b, insts);
-	i = 0;
-	while (i++ < push)
+	i = find_loc(st_a, st_b, insts, 0);
+	stack_print(st_a, st_b);
+	j = find_loc(st_a, st_b, insts, i);
+	tot_rot = i + j + 1;
+	while (tot_rot > 0)
 	{
-		rotate_stack(st_a, st_b, insts, st_b->data[st_b->len - 1]);
+		inst_save("rra", insts, st_a, st_b);
+		tot_rot--;
 	}
+	stack_print(st_a, st_b);
 }
+
